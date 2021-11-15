@@ -80,6 +80,4 @@ test:
 #
 production:
   <<: *default
-  database: mug_rent_production
-  username: mug_rent
-  password: <%= ENV['MUG_RENT_DATABASE_PASSWORD'] %>
+  url: <%= ENV['POSTGRESQL_ADDON_URI'] %>

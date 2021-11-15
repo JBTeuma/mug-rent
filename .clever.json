@@ -1,0 +1,11 @@
+{
+  "apps": [
+    {
+      "app_id": "app_3b2d31b6-5507-4fa8-965a-69a85cfba089",
+      "org_id": "user_4894f94e-7d0e-43b3-ad47-80115013825d",
+      "deploy_url": "https://push-n2-par-clevercloud-customers.services.clever-cloud.com/app_3b2d31b6-5507-4fa8-965a-69a85cfba089.git",
+      "name": "mug-rent",
+      "alias": "mug-rent"
+    }
+  ]
+}
