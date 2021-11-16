@@ -36,10 +36,11 @@
   right: 16px;
   top: -20px;
   width: 40px;
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  grid-gap: 32px;
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 32px;
+  }
 }
 
 // Smallest device

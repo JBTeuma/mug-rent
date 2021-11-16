@@ -30,6 +30,7 @@
     margin-top: 1rem !important;
   }
 }
+
 .row {
   background-color: #fdf6e4;
   justify-content: center;
@@ -45,4 +46,8 @@
   grid-gap: 32px;
 }
 
-@import "components/navbar";
+.card-trip .card-trip-infos  {
+  align-items: center;
+}
+
+@import "components/navbar"; // Qu'est ce que ça fout là ?
