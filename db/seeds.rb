@@ -1,6 +1,7 @@
 require 'date'
 
 if Rails.env.development?
+  Booking.destroy_all
   Mug.destroy_all
   User.destroy_all
 end
@@ -97,14 +98,14 @@ puts '------ Finish to create 15 mugs ------'
 
 puts '------ Creating 3 bookings ------'
 # résa de Ringo pour le mug1 pour J à J+4
-booking1 = Booking.new(cost: 40, status: false, start_date: Date.today, end_date: Date.today + 4, mug: mug1, user: ringo)
+booking1 = Booking.new(cost: 40, status: "pending", start_date: Date.today, end_date: Date.today + 4, mug: mug1, user: ringo)
 booking1.save!
 
 # résa de Ringo pour le mug2 pour J+5 à J+8
-booking2 = Booking.new(cost: 30, status: false, start_date: Date.today + 5, end_date: Date.today + 8, mug: mug2, user: ringo)
+booking2 = Booking.new(cost: 30, status: "pending", start_date: Date.today + 5, end_date: Date.today + 8, mug: mug2, user: ringo)
 booking2.save!
 
 # résa de Ringo pour le mug3 pour J+9 à J+10
-booking3 = Booking.new(cost: 5, status: false, start_date: Date.today + 9, end_date: Date.today + 10, mug: mug3, user: ringo)
+booking3 = Booking.new(cost: 5, status: "pending", start_date: Date.today + 9, end_date: Date.today + 10, mug: mug3, user: ringo)
 booking3.save!
 puts '------Finsh bookings------'
