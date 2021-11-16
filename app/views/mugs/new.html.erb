@@ -5,9 +5,9 @@
   <%= simple_form_for(@mug) do |f| %>
     <%= f.input :color %>
     <%= f.input :description %>
-    <%= f.input :size, placeholder:"x, m or l"  %>
+    <%= f.input :size, placeholder:"s, m or l"  %>
     <%= f.input :price_by_day %>
-    <%= f.input :photos, as: :file, input_html: { multiple: true } %>
-    <%= f.button :submit %>
+    <%= f.input :photo, as: :file %>
+    <%= f.submit %>
   <% end %>
 </div>
