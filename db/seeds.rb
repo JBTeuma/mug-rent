@@ -7,10 +7,10 @@ end
 
 puts '-------Creating 2 users---------'
 
-john = User.new(username:'John', email: 'john@beetles.com')
+john = User.new(username:'John', email: 'john@beetles.com', address: 'Whitechapel, London, UK')
 john.password = '12345678'
 john.save!
-ringo = User.new(username:'Ringo', email: 'ringo@beetles.com')
+ringo = User.new(username:'Ringo', email: 'ringo@beetles.com', address: 'Queen Square Gardens, London, UK')
 ringo.password = '12345678'
 ringo.save!
 puts '------ Finish to create 2 users ------'
