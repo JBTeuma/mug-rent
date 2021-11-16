@@ -30,6 +30,17 @@
     margin-top: 1rem !important;
   }
 }
-.row h2 {
-  margin: 2rem 0;
+.row {
+  background-color: #fdf6e4;
+  justify-content: center;
+  h2 {
+    margin: 2rem 0;
+  }
+}
+
+.wrapper {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
 }

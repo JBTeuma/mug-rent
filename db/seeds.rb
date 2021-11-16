@@ -1,6 +1,7 @@
 require 'date'
 
 if Rails.env.development?
+  Booking.destroy_all
   Mug.destroy_all
   User.destroy_all
 end
