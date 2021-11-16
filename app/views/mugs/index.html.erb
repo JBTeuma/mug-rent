@@ -1,16 +1,18 @@
-<h1>All mugs on rental</h1>
-
 <div class="container">
-  <% @mugs.each do |mug| %>
-    <%= link_to(mug_path(mug.id), html_options = {}) do %>
-      <div class="card-product">
-        <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
-        <div class="card-product-infos">
-          <%= mug.color %>
-          <%= mug.size %>
-          <%= mug.price_by_day %>
+  <h1 class="mugs-title">All mugs on rental</h1>
+
+  <div class="cards">
+    <% @mugs.each do |mug| %>
+      <%= link_to(mug_path(mug.id), html_options = {}) do %>
+        <div class="card-product mug-card">
+          <img src="https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/skateboard.jpg" />
+          <div class="card-product-infos">
+            <div class="mug-color"><strong>Color: </strong><%= mug.color %></div>
+            <div class="mug-size"><strong>Size: </strong><%= mug.size %></div>
+            <div class="mug-price"><strong>Price: </strong><%= mug.price_by_day %> euros/day</div>
+          </div>
         </div>
-      </div>
+      <% end %>
     <% end %>
-  <% end %>
+  </div>
 </div>
