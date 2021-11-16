@@ -1,21 +1,4 @@
 // Specific CSS for your home-page
-h1 {
-  margin: 2rem 0rem !important;
-  font-size: 3rem;
-  font-weight: 700;
-}
-
-h2 {
-  margin: 3rem 0rem !important;
-  font-size: 2rem;
-  font-weight: 600;
-}
-
-p {
-  font-size: 1rem;
-  font-weight:400;
-  font-family: $body-font;
-}
 
 .banner {
   background-size: cover;
@@ -24,21 +7,29 @@ p {
   background-image:
     linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
     url('https://images.unsplash.com/photo-1588253293138-ed5da9c55b12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1169&q=80');
-}
 
-.banner h1 {
-  margin: 0;
-  color: white;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
-  font-weight: bold;
-  strong {
-    color: #b9b5a9;
+  h1 {
+    margin: 0;
+    margin-top: 1rem !important;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-weight: 700;
+    strong {
+      color: #b9b5a9;
+    }
+  }
+
+  h3 {
+    font-weight: 500;
+    margin-top: 1rem !important;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  a {
+    margin-top: 1rem !important;
   }
 }
-
-.banner p {
-  font-size: 1rem;
-  color: white;
-  opacity: .7;
-  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+.row h2 {
+  margin: 2rem 0;
 }
