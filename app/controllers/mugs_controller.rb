@@ -15,6 +15,10 @@ class MugsController < ApplicationController
       render :new
     end
   end
+  
+  def index
+    @mugs = Mug.all
+  end
 
   private
 
