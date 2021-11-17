@@ -16,7 +16,7 @@ class BookingsController < ApplicationController
     @booking.cost = (((@booking.end_date - @booking.start_date) / 24 / 60 / 60 / 1_000) + 1) * @mug.price_by_day
     if @booking.save
       flash[:notice] = "La demande de location a bien était prise en compte"
-      redirect_to root_path
+      redirect_to dashboard_path
     else
       render :new
     end
