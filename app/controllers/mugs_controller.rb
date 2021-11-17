@@ -10,7 +10,7 @@ class MugsController < ApplicationController
     @mug.user = current_user
     if @mug.save
       flash[:notice] = "Mug was successfully created"
-      redirect_to mug_path
+      redirect_to mug_path(@mug)
     else
       render :new
     end
