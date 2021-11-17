@@ -22,12 +22,12 @@
         <div class="card-trip">
           <%= cl_image_tag("#{mug.photo.key}", width: 100, height: 200) %>
           <%= link_to mug_path(mug.id) do %>
-          <div class="card-trip-infos">
-            <div>
-              <p><%= mug.description %></p>
+            <div class="card-trip-infos">
+              <div>
+                <p><%= mug.description %></p>
+              </div>
+              <h2 class="card-trip-pricing text-center"><%= mug.price_by_day %>€ /jour</h2>
             </div>
-            <h2 class="card-trip-pricing text-center"><%= mug.price_by_day %>€ /jour</h2>
-          </div>
           <% end %>
         </div>
       <% end %>
