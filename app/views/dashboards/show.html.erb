@@ -1,0 +1,47 @@
+<h1 class="text-center"><%= current_user.username %></h1>
+
+<div class="container dashboard col-9">
+  <div class="row">
+    <div class="colonne col-12 p-2">
+      <h2 class="text-center">Données personnelles</h2>
+      <p>Username : <%= current_user.username %></p>
+      <p>Email : <%= current_user.email %></p>
+    </div>
+    <div class="colonne col-12 p-2">
+      <h2 class="text-center">Mes mugs</h2>
+      <ul>
+        <div class="wrapper">
+          <% current_user.mugs.each do |mug| %>
+            <%= link_to(mug_path(mug.id), html_options = {}) do %>
+              <div class="card-product mug-card">
+                <%= cl_image_tag("#{mug.photo.key}", width: 75, height: 75) %>
+                <div class="card-product-infos">
+                  <div class="mug-color"><strong>Couleur: </strong><%= mug.color %></div>
+                  <div class="mug-size"><strong>Taille: </strong><%= mug.size %></div>
+                  <div class="mug-price"><strong>Prix: </strong><%= mug.price_by_day %> € / jour</div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+        </div>
+      </ul>
+    </div>
+    <div class="colonne col-12 p-2">
+      <h2 class="text-center">Réservations</h2>
+      <ul>
+        <div class="wrapper">
+          <% current_user.bookings.each do |booking| %>
+            <div class="card-trip">
+              <%= cl_image_tag("#{booking.mug.photo.key}", width: 100, height: 100) %>
+              <div class="card-trip-infos">
+                <div class="mug-size"><strong>Jour de la délivrance: </strong><%= booking.start_date.day %>/<%= booking.start_date.month %></div>
+                <div class="mug-size"><strong>Durée de jouissance: </strong><%= booking.end_date - booking.start_date %> jours</div>
+                <div class="mug-price"><strong>Coût: </strong><%= booking.cost %> €</div>
+              </div>
+            </div>
+          <% end %>
+        </div>
+      </ul>
+    </div>
+  </div>
+</div>
