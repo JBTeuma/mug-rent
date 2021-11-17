@@ -1,4 +1,4 @@
-<h2 class="text-center">Log in</h2>
+<h2 class="text-center mt-3">Se connecter</h2>
 
 <div class="container col-4">
   <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
@@ -14,9 +14,9 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "Log in" %>
+      <%= f.button :submit, "Se connecter", class: "btn btn-secondary" %>
+      <div class="btn btn-light ml-2"><%= render "devise/shared/links" %></div>
     </div>
   <% end %>
 
-  <%= render "devise/shared/links" %>
 </div>
