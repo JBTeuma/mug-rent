@@ -1,2 +1,35 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<div class="banner">
+  <div class="container">
+    <h1>Mug Rent</h1> <br>
+    <h1>Le réconfort d'un bon café dans le <strong><i class="fas fa-coffee"></i></strong> de ses <strong>rêves</strong> !</h1>
+    <h3>Parce que boire n'est jamais anecdotique.</h3>
+    <%= link_to "Voir tous les mugs", mugs_path, class: "btn btn-flat" %>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row col-12">
+    <div>
+      <h2>Le café est toujours meilleur dans la tasse des autres</h2>
+      <p>
+      A tous ceux qui sont des obsessionnels de l'oubli, des imprudents notoires, des victimes des vols de tasses, des maladroits
+      compulsifs sans oubliés les potomanes, nous avons pour vous un message d'espoir :
+      <span>nous vous permettons d'avoir toujours un Mug à portée de main</span>
+      </p>
+    </div>
+    <div class="wrapper">
+      <% @mugs.each do |mug|  %>
+        <div class="card-trip">
+          <%= cl_image_tag("#{mug.photo.key}", width: 100, height: 200) %>
+          <div class="card-trip-infos">
+            <div>
+              <p><%= mug.description %></p>
+            </div>
+            <h2 class="card-trip-pricing text-center"><%= mug.price_by_day %>€ /jour</h2>
+          </div>
+        </div>
+      <% end %>
+
+    </div>
+  </div>
+</div>

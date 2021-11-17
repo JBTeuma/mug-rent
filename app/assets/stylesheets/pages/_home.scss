@@ -1,2 +1,53 @@
 // Specific CSS for your home-page
-@import "components/navbar";
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  background-image:
+    linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4)),
+    url('https://images.unsplash.com/photo-1588253293138-ed5da9c55b12?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1169&q=80');
+
+  h1 {
+    margin: 0;
+    margin-top: 1rem !important;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+    font-weight: 700;
+    strong {
+      color: #c08029;
+    }
+  }
+
+  h3 {
+    font-weight: 500;
+    margin-top: 1rem !important;
+    margin: 0;
+    color: white;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  }
+  a {
+    margin-top: 1rem !important;
+  }
+}
+
+.row {
+  margin-bottom: 50px;
+  justify-content: center;
+  h2 {
+    margin: 2rem 0;
+  }
+}
+
+.wrapper {
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
+
+.card-trip .card-trip-infos  {
+  align-items: center;
+}
+
+@import "components/navbar"; // Qu'est ce que ça fout là ?
