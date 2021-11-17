@@ -1,13 +1,12 @@
-<div class="container">
+<div class="container col-4">
   <h1>Let people rent your own mug!</h1>
-
-  <h2>Please fill the form below for create an announce</h2>
-  <%= simple_form_for(@mug) do |f| %>
-    <%= f.input :color %>
-    <%= f.input :description %>
-    <%= f.input :size, placeholder:"s, m or l"  %>
-    <%= f.input :price_by_day %>
-    <%= f.input :photo, as: :file %>
-    <%= f.submit %>
-  <% end %>
+    <h2>Please fill the form below for create an announce</h2>
+    <%= simple_form_for(@mug) do |f| %>
+      <%= f.input :color %>
+      <%= f.input :description %>
+      <%= f.input :size, placeholder:"s, m or l"  %>
+      <%= f.input :price_by_day %>
+      <%= f.input :photo, as: :file %>
+      <%= f.submit %>
+    <% end %>
 </div>
