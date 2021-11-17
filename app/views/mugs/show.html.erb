@@ -1,2 +1,21 @@
-<h1>Mugs#show</h1>
-<p>Find me in app/views/mugs/show.html.erb</p>
+<div class="container-lg">
+  <div class="row align-items-start mug-row">
+    <div class="mug-img-desc-col col-6">
+      <div class="img-container w-100">
+        <%= cl_image_tag @mug.photo.key, width: 700, crop: :fill, class: "w-100" %>
+      </div>
+      <div class="mug-desc">
+        <strong>Description: </strong><%= @mug.description %>
+      </div>
+    </div>
+
+    <div class="mug-map-info-col col-6">
+      <div class="mug-info">
+        <div class="mug-color"><strong>Couleur: </strong><%= @mug.color %></div>
+        <div class="mug-size"><strong>Taille: </strong><%= @mug.size %></div>
+        <div class="mug-price"><strong>Prix: </strong><%= @mug.price_by_day %> euros/jour</div>
+      </div>
+      <%= link_to("Louer ce mug", new_mug_booking_path(@mug), html_options = {class: "btn mug-booking-btn"}) %>
+    </div>
+  </div>
+</div>
