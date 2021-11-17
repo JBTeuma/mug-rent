@@ -1,6 +1,7 @@
 require 'test_helper'
 
 class MugsControllerTest < ActionDispatch::IntegrationTest
+
   test "should get new" do
     get mugs_new_url
     assert_response :success
@@ -20,5 +21,4 @@ class MugsControllerTest < ActionDispatch::IntegrationTest
     get mugs_index_url
     assert_response :success
   end
-
 end

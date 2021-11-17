@@ -3,9 +3,6 @@
   background: white;
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
   height: 100%;
-  &:hover {
-    box-shadow: 0 0 15px rgba(0,0,0,0.5);
-  }
 }
 
 .card-trip > img {
@@ -45,11 +42,6 @@
     grid-template-columns: 1fr 1fr;
     grid-gap: 32px;
   }
-
-.cards {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 32px;
 }
 
 // Smallest device
@@ -76,13 +68,13 @@
 // Large devices (desktops, 992px and up)
 @media (min-width: 992px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
 
 // Extra large devices (large desktops, 1200px and up)
 @media (min-width: 1200px) {
   .cards {
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr;
   }
 }
