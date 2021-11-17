@@ -49,7 +49,7 @@ file = File.open('db/fixtures/images/mug_blanc_rouge.jpg')
 mug6.photo.attach(io: file, filename: 'mug_blanc_rouge.jpg', content_type: 'image/jpg')
 mug6.save!
 
-mug7 = Mug.new(color: 'white', size: 'm', description: "Un mug blanc bien réconfortant, pour les plus uniformistes d'entre nous !", user: john, price_by_day: 5)
+mug7 = Mug.new(color: 'white', size: 'm', description: "Un mug blanc bien réconfortant, pour les plus conformistes d'entre nous !", user: john, price_by_day: 5)
 file = File.open('db/fixtures/images/mug_blanc.jpg')
 mug7.photo.attach(io: file, filename: 'mug_blanc.jpg', content_type: 'image/jpg')
 mug7.save!
