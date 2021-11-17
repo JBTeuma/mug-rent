@@ -15,7 +15,11 @@ class MugsController < ApplicationController
       render :new
     end
   end
-  
+
+  def show
+    @mug = Mug.find(params[:id])
+  end
+
   def index
     @mugs = Mug.all
   end
