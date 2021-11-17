@@ -1,0 +1,10 @@
+<div class="container col-4">
+  <h1>Louer ce mug</h1>
+    <h2>Choisiez vos dates de locations</h2>
+    <%= simple_form_for([@mug, @booking], html: { data: { priceByDay: @mug.price_by_day }}) do |f| %>
+      <%= f.input :start_date, as: :date, html5: true, value: DateTime.now %>
+      <%= f.input :end_date, as: :date, html5: true, value: DateTime.now %>
+      <div class="cost"><%= @mug.price_by_day %> €</div>
+      <%= f.submit class:"submit" %>
+    <% end %>
+</div>
