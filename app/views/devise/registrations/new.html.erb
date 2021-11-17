@@ -19,7 +19,7 @@
     </div>
 
     <div class="form-actions">
-      <%= f.button :submit, "S'inscrire", class: "btn btn-secondary" %>
+      <%= f.button :submit, "S'inscrire", class: "btn btn-secondary", method: :post%>
       <div class="btn btn-light ml-2"><%= render "devise/shared/links" %></div>
     </div>
   <% end %>
