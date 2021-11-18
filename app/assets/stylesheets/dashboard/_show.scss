@@ -1,0 +1,62 @@
+.dashboard-container {
+  border-radius: 8px;
+  background-color: #e1e1e1;
+}
+
+.dashboard h2 {
+  border-bottom: 1px solid #c08029;
+}
+
+.dashboard .row {
+  margin: 15px;
+  padding: 15px;
+}
+
+.dashboard .wrapper{
+  margin-bottom: 5px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-gap: 32px;
+}
+
+.dashboard .wrapper .card-trip-infos {
+  display: block;
+}
+
+.dashboard.wrapper{
+  margin-top: 2rem;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
+
+.dashboard-infos {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  padding: 3rem;
+}
+
+.dashboard.card-trip {
+  background: white;
+}
+
+.dashboard.card-product {
+  overflow: hidden;
+  height: 120px;
+  background: white;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.dashboard.card-product .card-product-infos {
+  padding-left: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.dashboard.card-trip .card-product-infos {
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}

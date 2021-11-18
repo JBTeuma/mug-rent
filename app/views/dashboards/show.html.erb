@@ -1,24 +1,38 @@
 <h1 class="text-center"><%= current_user.username %></h1>
 
-<div class="container dashboard col-9">
+<div class="container dashboard-container col-9">
   <div class="row">
     <div class="colonne col-12 p-2">
       <h2 class="text-center">Données personnelles</h2>
-      <p>Username : <%= current_user.username %></p>
-      <p>Email : <%= current_user.email %></p>
+      <div class=" dashboard-infos col-4 offset-4">
+        <div>
+          <i class="fas fa-user-circle"></i>
+          <%= current_user.username %>
+        </div class="p5">
+        <div class="p5">
+          <%= current_user.email %>
+          <i class="fas fa-envelope"></i>
+        </div>
+
+      </div>
+
     </div>
     <div class="colonne col-12 p-2">
       <h2 class="text-center">Mes mugs</h2>
       <ul>
-        <div class="wrapper">
+        <div class="dashboard wrapper">
           <% current_user.mugs.each do |mug| %>
             <%= link_to(mug_path(mug.id), html_options = {}) do %>
-              <div class="card-product mug-card">
+              <div class="dashboard card-product mug-card">
                 <%= cl_image_tag("#{mug.photo.key}", width: 75, height: 75) %>
                 <div class="card-product-infos">
-                  <div class="mug-color"><strong>Couleur: </strong><%= mug.color %></div>
-                  <div class="mug-size"><strong>Taille: </strong><%= mug.size %></div>
-                  <div class="mug-price"><strong>Prix: </strong><%= mug.price_by_day %> € / jour</div>
+                  <div class="mug-color"><i class="fas fa-tint">  <%= mug.color %></i></div>
+                  <div class="mug-size text-gray">
+                      <i class="fas fa-coffee h6 <%= "text-black" if mug.size == "s"%>"></i>
+                      <i class="fas fa-coffee h5 <%= "text-black" if mug.size == "m"%>"></i>
+                      <i class="fas fa-coffee h4 <%= "text-black" if mug.size == "l"%>"></i>
+                  </div>
+                  <div class="mug-price"><%= mug.price_by_day %> <i class="fas fa-euro-sign"></i> / jour</div>
                 </div>
               </div>
             <% end %>
@@ -29,14 +43,14 @@
     <div class="colonne col-12 p-2">
       <h2 class="text-center">Réservations</h2>
       <ul>
-        <div class="wrapper">
+        <div class="dashboard wrapper">
           <% current_user.bookings.each do |booking| %>
-            <div class="card-trip">
+            <div class="dashboard card-trip">
               <%= cl_image_tag("#{booking.mug.photo.key}", width: 100, height: 100) %>
-              <div class="card-trip-infos">
-                <div class="mug-size"><strong>Jour de la délivrance: </strong><%= booking.start_date.day %>/<%= booking.start_date.month %></div>
-                <div class="mug-size"><strong>Durée de jouissance: </strong><%= booking.end_date - booking.start_date %> jours</div>
-                <div class="mug-price"><strong>Coût: </strong><%= booking.cost %> €</div>
+              <div class="dashboard card-trip-infos">
+                <div><i class="fas fa-calendar-alt"></i>  <%= booking.start_date.day %>/<%= booking.start_date.month %></div>
+                <div><i class="fas fa-hourglass"></i>  <%= ((booking.end_date.to_i - booking.start_date.to_i) / 86400) %> jours</div>
+                <div><%= booking.cost %> <i class="fas fa-euro-sign"></i></div>
               </div>
             </div>
           <% end %>

@@ -1,6 +1,6 @@
 // Specific CSS for your home-page
 
-.banner {
+.home.banner {
   background-size: cover;
   background-position: center;
   padding: 150px 0;
@@ -31,7 +31,7 @@
   }
 }
 
-.row {
+.home.row {
   margin-bottom: 50px;
   justify-content: center;
   h2 {
@@ -39,15 +39,17 @@
   }
 }
 
-.wrapper {
+.home.wrapper {
   margin-top: 2rem;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
 }
 
-.card-trip .card-trip-infos  {
+.home.card-trip .card-trip-infos  {
   align-items: center;
 }
 
-@import "components/navbar"; // Qu'est ce que ça fout là ?
+.home.card-trip:hover {
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
