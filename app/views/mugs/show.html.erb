@@ -5,17 +5,35 @@
         <%= cl_image_tag @mug.photo.key, width: 700, crop: :fill, class: "w-100" %>
       </div>
       <div class="mug-desc">
-        <strong>Description: </strong><%= @mug.description %>
+        <strong><%= @mug.description %></strong>
       </div>
     </div>
 
     <div class="mug-map-info-col col-6">
       <div class="mug-info">
-        <div class="mug-color"><strong>Couleur: </strong><%= @mug.color %></div>
-        <div class="mug-size"><strong>Taille: </strong><%= @mug.size %></div>
-        <div class="mug-price"><strong>Prix: </strong><%= @mug.price_by_day %> euros/jour</div>
+        <div class="mug-color"><strong><%= @mug.color.split(" ").map{ |word| word.capitalize }.join(" ") %></strong></div>
+        <div class="mug-size"><%= @mug.size %></div>
       </div>
-      <%= link_to("Louer ce mug", new_mug_booking_path(@mug), html_options = {class: "btn mug-booking-btn"}) %>
+      <div class="mug-resa-form-col col-10">
+        <h2>Réserver votre mug</h2>
+        <div class="form">
+          <%= simple_form_for([@mug, @booking], html: { data: { priceByDay: @mug.price_by_day }}) do |f| %>
+            <%= f.input :start_date, label: 'Début de la location', as: :date, html5: true, input_html: {value: f.object.start_date || Date.today, class: "datepicker" }%>
+            <%= f.input :end_date, label: 'Fin de la location', as: :date, html5: true, input_html: {value: f.object.end_date || Date.today, class: "datepicker" } %>
+            <div class="calcul">
+              <div class="line_price d-flex justify-content-between p-2">
+                <span class="price">Location à la journée</span>
+                <span class="price_day"><%= @mug.price_by_day %> €</span>
+              </div>
+              <div class="cost_price d-flex justify-content-between p-2">
+                <span class="cost">Total</span>
+                <span class="cost_total"><%= @mug.price_by_day %> €</span>
+              </div>
+            </div>
+            <%= f.submit "Réserver", class:"submit" %>
+        </div>
+        <% end %>
+      </div>
     </div>
   </div>
 </div>

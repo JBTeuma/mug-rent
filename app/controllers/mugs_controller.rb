@@ -18,6 +18,8 @@ class MugsController < ApplicationController
 
   def show
     @mug = Mug.find(params[:id])
+    @booking = Booking.new
+    @booking.mug = @mug
   end
 
   def index
