@@ -12,6 +12,12 @@ john.save!
 ringo = User.new(username:'Ringo', email: 'ringo@beetles.com', address: 'Queen Square Gardens, London, UK')
 ringo.password = '12345678'
 ringo.save!
+paul = User.new(username:'Paul', email: 'paul@beetles.com', address: 'South Kensington, London, UK')
+paul.password = '12345678'
+paul.save!
+george = User.new(username:'George', email: 'george@beetles.com', address: 'Muswell Hill, London, UK')
+george.password = '12345678'
+george.save!
 puts '------ Finish to create 2 users ------'
 
 puts '-------Creating 15 mugs----------'
@@ -22,37 +28,37 @@ file = File.open('db/fixtures/images/mug_ancien.jpg')
 mug1.photo.attach(io: file, filename: 'mug_ancien.jpg', content_type: 'image/jpg')
 mug1.save!
 
-mug2 = Mug.new(color: 'argent', size: 'l', description: "Vous avez toujours voulu boire un café dans la coupe d'un Seigneur bavarois ? Essayez-le !", user: john, price_by_day: 10)
-file = File.open('db/fixtures/images/mug_argent.png')
-mug2.photo.attach(io: file, filename: 'mug_argent.png', content_type: 'image/png')
+mug2 = Mug.new(color: 'argent', size: 'l', description: "Vous avez toujours voulu boire un café dans la coupe d'un Seigneur bavarois ? Essayez-le !", user: ringo, price_by_day: 10)
+file = File.open('db/fixtures/images/mug_argent.jpeg')
+mug2.photo.attach(io: file, filename: 'mug_argent.jpeg', content_type: 'image/jpeg')
 mug2.save!
 
-mug3 = Mug.new(color: 'Blonde', size: 'm', description: "Retrouvez la joie du café conjuguée à la bière !", user: john, price_by_day: 5)
+mug3 = Mug.new(color: 'Blonde', size: 'm', description: "Retrouvez la joie du café conjuguée à la bière !", user: paul, price_by_day: 5)
 file = File.open('db/fixtures/images/mug_beer.jpg')
 mug3.photo.attach(io: file, filename: 'mug_beer.jpg', content_type: 'image/png')
 mug3.save!
 
-mug4 = Mug.new(color: 'blanc', size: 'm', description: "Si vous êtes un aventurier et que vous avez l'âme prétentieuse, profitez de ce mug !", user: john, price_by_day: 5)
+mug4 = Mug.new(color: 'blanc', size: 'm', description: "Si vous êtes un aventurier et que vous avez l'âme prétentieuse, profitez de ce mug !", user: george, price_by_day: 5)
 file = File.open('db/fixtures/images/mug_begin.jpg')
 mug4.photo.attach(io: file, filename: 'mug_begin.jpg', content_type: 'image/jpg')
 mug4.save!
 
-mug5 = Mug.new(color: 'blanc et bleu', size: 'm', description: "On ne va pas se mentir, c'est un mug Ikea. Mais bon, tous les goûts sont dans la nature, non ?", user: john, price_by_day: 5)
-file = File.open('db/fixtures/images/mug_blanc_bleu.jpg')
-mug5.photo.attach(io: file, filename: 'mug_blanc_bleu.jpg', content_type: 'image/jpg')
+mug5 = Mug.new(color: 'bleu', size: 'm', description: "On ne va pas se mentir, c'est un mug Ikea. Mais bon, tous les goûts sont dans la nature, non ?", user: john, price_by_day: 5)
+file = File.open('db/fixtures/images/mug_bleu.jpg')
+mug5.photo.attach(io: file, filename: 'mug_bleu.jpg', content_type: 'image/jpg')
 mug5.save!
 
-mug6 = Mug.new(color: 'blanc et rouge', size: 'm', description: "Le rouge, c'est la meilleure couleur. Aguichant, énervant et tendantieux, vous vous reconnaissez ? Prenez-le !", user: john, price_by_day: 5)
-file = File.open('db/fixtures/images/mug_blanc_rouge.jpg')
-mug6.photo.attach(io: file, filename: 'mug_blanc_rouge.jpg', content_type: 'image/jpg')
+mug6 = Mug.new(color: 'noir et rouge', size: 'm', description: "Le rouge, c'est la meilleure couleur. Aguichant, énervant et tendantieux, vous vous reconnaissez ? Prenez-le !", user: ringo, price_by_day: 5)
+file = File.open('db/fixtures/images/mug_rouge.jpg')
+mug6.photo.attach(io: file, filename: 'mug_rouge.jpg', content_type: 'image/jpg')
 mug6.save!
 
-mug7 = Mug.new(color: 'blanc', size: 'm', description: "Un mug blanc bien réconfortant, pour les plus conformistes d'entre nous !", user: john, price_by_day: 5)
+mug7 = Mug.new(color: 'blanc', size: 'm', description: "Un mug blanc bien réconfortant, pour les plus conformistes d'entre nous !", user: paul, price_by_day: 5)
 file = File.open('db/fixtures/images/mug_blanc.jpg')
 mug7.photo.attach(io: file, filename: 'mug_blanc.jpg', content_type: 'image/jpg')
 mug7.save!
 
-mug8 = Mug.new(color: 'blanc', size: 'l', description: "Si comme Macron vous pensez que votre projet mérite un Mug, adoptez-le et vous vous sentirez enfin comme l'élu", user: john, price_by_day: 5)
+mug8 = Mug.new(color: 'blanc', size: 'l', description: "Si comme Macron vous pensez que votre projet mérite un Mug, adoptez-le et vous vous sentirez enfin comme l'élu", user: george, price_by_day: 5)
 file = File.open('db/fixtures/images/mug_boss.jpg')
 mug8.photo.attach(io: file, filename: 'mug_boss.jpg', content_type: 'image/jpg')
 mug8.save!
@@ -62,17 +68,17 @@ file = File.open('db/fixtures/images/mug_coeur.jpg')
 mug9.photo.attach(io: file, filename: 'mug_coeur.jpg', content_type: 'image/jpg')
 mug9.save!
 
-mug10 = Mug.new(color: 'marron', size: 's', description: "Une mystérieuse femme vous a laissé ce Mug. Aurez-vous la curiosité de le prendre ?", user: john, price_by_day: 6)
+mug10 = Mug.new(color: 'marron', size: 's', description: "Une mystérieuse femme vous a laissé ce Mug. Aurez-vous la curiosité de le prendre ?", user: ringo, price_by_day: 6)
 file = File.open('db/fixtures/images/mug_marron.jpg')
 mug10.photo.attach(io: file, filename: 'mug_marron.jpg', content_type: 'image/jpg')
 mug10.save!
 
-mug11 = Mug.new(color: 'blanc', size: 's', description: "Pour celles et ceux qui aiment boire un café en lisant 'Orgueil et Préjugés'", user: john, price_by_day: 4)
+mug11 = Mug.new(color: 'blanc', size: 's', description: "Pour celles et ceux qui aiment boire un café en lisant 'Orgueil et Préjugés'", user: paul, price_by_day: 4)
 file = File.open('db/fixtures/images/mug_motifs.jpg')
 mug11.photo.attach(io: file, filename: 'mug_motifs.jpg', content_type: 'image/jpg')
 mug11.save!
 
-mug12 = Mug.new(color: 'or', size: 'l', description: "Egyptien, Babyloniens et sumériens ont tous trempé leurs lèvres dedans. Rejoignez l'histoire en louant ce Mug", user: john, price_by_day: 12)
+mug12 = Mug.new(color: 'or', size: 'l', description: "Egyptien, Babyloniens et sumériens ont tous trempé leurs lèvres dedans. Rejoignez l'histoire en louant ce Mug", user: george, price_by_day: 12)
 file = File.open('db/fixtures/images/mug_or.png')
 mug12.photo.attach(io: file, filename: 'mug_gold.png', content_type: 'image/png')
 mug12.save!
@@ -82,12 +88,12 @@ file = File.open('db/fixtures/images/mug_pois_noirs.jpg')
 mug13.photo.attach(io: file, filename: 'mug_pois_noirs.jpg', content_type: 'image/jpg')
 mug13.save!
 
-mug14 = Mug.new(color: 'noir', size: 'm', description: "Les bourreaux de travail ont droit, eux aussi, d'avoir un mug ! Now !", user: john, price_by_day: 4)
+mug14 = Mug.new(color: 'noir', size: 'm', description: "Les bourreaux de travail ont droit, eux aussi, d'avoir un mug ! Now !", user: ringo, price_by_day: 4)
 file = File.open('db/fixtures/images/mug_urgent.jpg')
 mug14.photo.attach(io: file, filename: 'mug_urgent.jpg', content_type: 'image/jpg')
 mug14.save!
 
-mug15 = Mug.new(color: 'blanc', size: 's', description: "Quand le réveil est toujours source de contrainte, sachez reprendre le dessus. Avec ce Mug, un tranche de gateau à la pomme et un bon livre, vous en aurez les moyens", user: john, price_by_day: 5)
+mug15 = Mug.new(color: 'blanc', size: 's', description: "Quand le réveil est toujours source de contrainte, sachez reprendre le dessus. Avec ce Mug, un tranche de gateau à la pomme et un bon livre, vous en aurez les moyens", user: paul, price_by_day: 5)
 file = File.open('db/fixtures/images/mug_wake_up.jpg')
 mug15.photo.attach(io: file, filename: 'mug_wake_up.jpg', content_type: 'image/jpg')
 mug15.save!
@@ -100,10 +106,10 @@ booking1 = Booking.new(cost: 40, status: "pending", start_date: Date.today, end_
 booking1.save!
 
 # résa de Ringo pour le mug2 pour J+5 à J+8
-booking2 = Booking.new(cost: 30, status: "pending", start_date: Date.today + 5, end_date: Date.today + 8, mug: mug2, user: ringo)
+booking2 = Booking.new(cost: 30, status: "pending", start_date: Date.today + 5, end_date: Date.today + 8, mug: mug2, user: paul)
 booking2.save!
 
 # résa de Ringo pour le mug3 pour J+9 à J+10
-booking3 = Booking.new(cost: 5, status: "pending", start_date: Date.today + 9, end_date: Date.today + 10, mug: mug3, user: ringo)
+booking3 = Booking.new(cost: 5, status: "pending", start_date: Date.today + 9, end_date: Date.today + 10, mug: mug3, user: john)
 booking3.save!
 puts '------Finsh bookings------'
