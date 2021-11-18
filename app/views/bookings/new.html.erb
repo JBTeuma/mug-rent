@@ -1,10 +1,21 @@
 <div class="container col-4">
   <h1>Louer ce mug</h1>
     <h2>Choisiez vos dates de locations</h2>
-    <%= simple_form_for([@mug, @booking], html: { data: { priceByDay: @mug.price_by_day }}) do |f| %>
-      <%= f.input :start_date, as: :date, html5: true, input_html: {value: f.object.start_date || Date.today }%>
-      <%= f.input :end_date, as: :date, html5: true, input_html: {value: f.object.end_date || Date.today } %>
-      <div class="cost"><%= @mug.price_by_day %> €</div>
-      <%= f.submit class:"submit" %>
+    <div class="form">
+      <%= simple_form_for([@mug, @booking], html: { data: { priceByDay: @mug.price_by_day }}) do |f| %>
+        <%= f.input :start_date, as: :date, html5: true, input_html: {value: f.object.start_date || Date.today }%>
+        <%= f.input :end_date, as: :date, html5: true, input_html: {value: f.object.end_date || Date.today } %>
+        <div class="calcul">
+          <div class="line_price d-flex justify-content-between p-2">
+            <span class="price">Location à la journée</span>
+            <span class="price_day"><%= @mug.price_by_day %> €</span>
+          </div>
+          <div class="cost_price d-flex justify-content-between p-2">
+            <span class="cost">Total</span>
+            <span class="cost_total"><%= @mug.price_by_day %> €</span>
+          </div>
+        </div>
+        <%= f.submit class:"submit" %>
+    </div>
     <% end %>
 </div>
