@@ -24,6 +24,12 @@ class MugsController < ApplicationController
 
   def index
     @mugs = Mug.all
+    @markers = @mugs.map do |mug|
+      {
+        lat: mug.latitude,
+        lng: mug.longitude
+      }
+    end
   end
 
   private
