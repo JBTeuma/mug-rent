@@ -3,8 +3,8 @@
     <h2>Choisiez vos dates de locations</h2>
     <div class="form">
       <%= simple_form_for([@mug, @booking], html: { data: { priceByDay: @mug.price_by_day }}) do |f| %>
-        <%= f.input :start_date, as: :date, html5: true, input_html: {value: f.object.start_date || Date.today }%>
-        <%= f.input :end_date, as: :date, html5: true, input_html: {value: f.object.end_date || Date.today } %>
+        <%= f.input :start_date, as: :date, html5: true, input_html: {value: f.object.start_date || Date.today, class: "datepicker" }%>
+        <%= f.input :end_date, as: :date, html5: true, input_html: {value: f.object.end_date || Date.today, class: "datepicker" } %>
         <div class="calcul">
           <div class="line_price d-flex justify-content-between p-2">
             <span class="price">Location à la journée</span>
