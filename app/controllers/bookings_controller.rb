@@ -22,6 +22,22 @@ class BookingsController < ApplicationController
     end
   end
 
+  def validates
+    @user = current_user
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "accepted")
+
+    redirect_to dashboard_path
+  end
+
+  def deny
+    @user = current_user
+    @booking = Booking.find(params[:id])
+    @booking.update(status: "deny")
+
+    redirect_to dashboard_path
+  end
+
   private
 
   def booking_params

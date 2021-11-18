@@ -38,10 +38,6 @@
   padding: 1rem;
 }
 
-.dashboard.card-trip {
-  background: white;
-}
-
 .dashboard.card-product {
   overflow: hidden;
   height: 120px;
@@ -59,6 +55,46 @@
   grid-template-columns: 1fr 1fr;
 }
 
+.dashboard.card-trip {
+  background: white;
+  position: relative;
+}
+
+.dashboard.card-trip-infos {
+  position:unset;
+}
+
 .dashboard.card-trip .card-product-infos {
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+}
+
+.status {
+  background-color: #fdf6e4;
+  position: absolute;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  border-radius: 5px;
+  padding: 5px;
+  font-size: 18px;
+  top: 5px;
+  right: 5px;
+}
+
+.booking-response {
+  position: absolute;
+  top: 5px;
+  left: 5px;
+  display: row;
+  .accept {
+    background-color: #2e8fcf;
+    padding: 5px;
+    border-radius: 4px;
+    color: white;
+  }
+
+  .refuse {
+    background-color: #bd3030;
+    padding: 5px;
+    border-radius: 4px;
+    color: white;
+  }
 }

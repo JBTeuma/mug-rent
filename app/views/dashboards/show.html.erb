@@ -1,5 +1,5 @@
 <div class="container dashboard-container col-9">
-  <h1 class="text-center"><%= current_user.username %></h1>
+  <h1 class="text-center">Dashboard</h1>
   <div class="row">
     <div class="colonne col-12 p-2">
       <div class=" dashboard-infos col-4 offset-4">
@@ -8,13 +8,12 @@
           <%= current_user.username %>
         </div>
         <div class="text-center">
-          <%= current_user.email %>
           <i class="fas fa-envelope"></i>
+          <%= current_user.email %>
         </div>
-
       </div>
-
     </div>
+
     <div class="colonne col-12 p-2">
       <h2 class="text-center">Mes mugs</h2>
       <div class="dashboard-cards">
@@ -36,16 +35,41 @@
         <% end %>
       </div>
     </div>
+
     <div class="colonne col-12 p-2">
-      <h2 class="text-center">Réservations</h2>
+      <h2 class="text-center">Les Mugs qu'on m'emprunte</h2>
       <div class="dashboard-resa">
-        <% current_user.bookings.each do |booking| %>
+        <% current_user.my_rental_bookings.sort_by { |booking| booking.created_at }.each do |booking| %>
           <div class="dashboard card-trip">
             <%= cl_image_tag("#{booking.mug.photo.key}", width: 100, height: 100) %>
             <div class="dashboard card-trip-infos">
               <div><i class="fas fa-calendar-alt"></i>  <%= booking.start_date.day %>/<%= booking.start_date.month %></div>
               <div><i class="fas fa-hourglass"></i>  <%= ((booking.end_date.to_i - booking.start_date.to_i) / 86400) %> jours</div>
               <div><%= booking.cost %> <i class="fas fa-euro-sign"></i></div>
+              <p class="status"><%= booking.status %></p>
+              <div class="booking-response">
+                <% if booking.status == "pending" %>
+                  <%= link_to "Accepter", validates_booking_path(booking), class: "accept", method: :patch %>
+                  <%= link_to "Refuser", deny_booking_path(booking), class: "refuse", method: :patch %>
+                <% end %>
+              </div>
+            </div>
+          </div>
+        <% end %>
+      </div>
+    </div>
+
+    <div class="colonne col-12 p-2">
+      <h2 class="text-center">Les Mugs que j'emprunte</h2>
+      <div class="dashboard-resa">
+        <% current_user.bookings.sort_by { |booking| booking.created_at }.each do |booking| %>
+          <div class="dashboard card-trip">
+            <%= cl_image_tag("#{booking.mug.photo.key}", width: 100, height: 100) %>
+            <div class="dashboard card-trip-infos">
+              <div><i class="fas fa-calendar-alt"></i>  <%= booking.start_date.day %>/<%= booking.start_date.month %></div>
+              <div><i class="fas fa-hourglass"></i>  <%= ((booking.end_date.to_i - booking.start_date.to_i) / 86400) %> jours</div>
+              <div><%= booking.cost %> <i class="fas fa-euro-sign"></i></div>
+              <p class="status"><%= booking.status %></p>
             </div>
           </div>
         <% end %>
