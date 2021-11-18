@@ -1,6 +1,8 @@
 .dashboard-container {
   border-radius: 8px;
   background-color: #e1e1e1;
+  margin-top: 30px;
+  margin-bottom: 30px;
 }
 
 .dashboard h2 {
@@ -12,19 +14,19 @@
   padding: 15px;
 }
 
-.dashboard .wrapper{
-  margin-bottom: 5px;
+.dashboard-cards{
+  margin: 24px 24px;
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
 }
 
-.dashboard .wrapper .card-trip-infos {
+.dashboard-wrapper .card-trip-infos {
   display: block;
 }
 
-.dashboard.wrapper{
-  margin-top: 2rem;
+.dashboard-resa{
+  margin: 24px 24px;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
@@ -33,7 +35,7 @@
 .dashboard-infos {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  padding: 3rem;
+  padding: 1rem;
 }
 
 .dashboard.card-trip {
