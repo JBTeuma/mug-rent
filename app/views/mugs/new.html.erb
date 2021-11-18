@@ -1,10 +1,15 @@
-<div class="container col-4">
+<div class="container col-4 mt-4">
   <h1>Mettez votre mug à louer !</h1>
     <h3>Veuillez remplir le formulaire suivant</h3>
-    <%= simple_form_for(@mug) do |f| %>
+    <%= simple_form_for @mug, html: { class: 'radio-mugs mt-4' } do |f| %>
       <%= f.input :color %>
       <%= f.input :description %>
-      <%= f.input :size, placeholder:"s, m or l"  %>
+      <%= f.input :size,
+            as: :radio_buttons,
+            item_wrapper_tag: 'div',
+            item_wrapper_class: 'size-wrapper',
+            input_html: {class: 'size-selector'},
+            collection: Mug::MUG_SIZES.map { |size| ["  <i class='fas fa-coffee'></i>".html_safe, size] } %>
       <%= f.input :price_by_day %>
       <%= f.input :photo, as: :file %>
       <%= f.submit %>
