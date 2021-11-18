@@ -7,14 +7,18 @@
 @import "bootstrap/scss/bootstrap";
 @import "font-awesome-sprockets";
 @import "font-awesome";
+@import "flatpickr/dist/flatpickr";
+@import "flatpickr/dist/themes/confetti";
 
 // Your CSS partials
 @import "components/index";
 @import "components/font_awesome";
 @import "mugs/index";
+@import "mugs/new";
 @import "mugs/show";
 @import "pages/index";
 @import "dashboard/show";
+
 
 // Gobal
 a {

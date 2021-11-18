@@ -1,4 +1,6 @@
 class Mug < ApplicationRecord
+  MUG_SIZES = ["s", "m", "l"]
+
   has_many :bookings
   has_many :users, through: :bookings
   has_one_attached :photo
@@ -9,5 +11,7 @@ class Mug < ApplicationRecord
   validates :size, presence: true
   validates :price_by_day, presence: true
   validates :price_by_day, numericality: { only_integer: true }
-  validates :size, inclusion: { in: %w[s m l], message: "%{value} is not a valid size" }
+  validates :size, inclusion: { in: MUG_SIZES, message: "%{value} is not a valid size" }
+
+  delegate :longitude, :latitude, to: :user
 end

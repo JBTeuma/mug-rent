@@ -1,5 +1,5 @@
 class PagesController < ApplicationController
   def home
-    @mugs = Mug.all.limit(3)
+    @mugs = Mug.first(15).sample(3)
   end
 end

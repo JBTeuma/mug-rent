@@ -1,0 +1,44 @@
+.mug_size {
+  .size-wrapper:nth-child(3) {
+    i { font-size: 24px; }
+  }
+  .size-wrapper:nth-child(4) {
+    i { font-size: 32px; }
+  }
+  .size-wrapper:nth-child(5) {
+    i { font-size: 40px; }
+  }
+}
+
+.size-wrapper {
+  display: inline-block;
+  margin-right: 1rem;
+}
+
+.size-selector {
+  position: absolute;
+  transform: scale(0);
+}
+
+.size-selector + label {
+  display: inline-block;
+  cursor: pointer;
+  color: rgb(156, 156, 156);
+}
+
+.size-selector:checked + label {
+  color: rgb(201, 128, 32);
+}
+
+.size-selector:hover + label {
+  color: rgb(201, 128, 32);
+}
+
+.mug-new {
+  margin: 5rem;
+}
+
+.submit-new {
+  margin-top: 2rem;
+  margin-bottom: 6rem;
+}

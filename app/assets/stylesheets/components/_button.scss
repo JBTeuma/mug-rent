@@ -39,3 +39,23 @@
   background: linear-gradient(#f88d00, #db8008);
   color: white;
 }
+
+.submit {
+  color: white;
+  padding: 8px 24px;
+  border-radius: 4px;
+  background: #c08020;
+  transition: background 0.3s ease;
+  width: 100%;
+  margin-bottom: 1rem;
+}
+
+.submit:hover {
+  background: #f8e4c6;
+  color: rgb(116, 116, 116);
+}
+
+.submit:disabled {
+  background: rgb(116, 116, 116);
+  color: #f8e4c6;
+}
