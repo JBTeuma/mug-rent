@@ -1,11 +1,11 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
-  def new
-    @booking = Booking.new
-    @mug = Mug.find(params[:mug_id])
-    @booking.mug = @mug
-  end
+  # def new
+  #   @booking = Booking.new
+  #   @mug = Mug.find(params[:mug_id])
+  #   @booking.mug = @mug
+  # end
 
   def create
     @booking = Booking.new(booking_params)

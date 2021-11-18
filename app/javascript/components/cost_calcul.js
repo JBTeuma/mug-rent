@@ -14,7 +14,6 @@ const calcul = () => {
     costElement.innerText = `${cost} €`
     document.querySelector(".submit").disabled = false;
   } else {
-    window.alert("La date de début doit être inférieur à la date de fin de location")
     document.querySelector(".submit").disabled = true;
   }
 }
