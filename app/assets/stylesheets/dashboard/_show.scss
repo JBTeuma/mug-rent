@@ -31,6 +31,12 @@
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
 }
+.dashboard-rental {
+  margin: 24px 24px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 32px;
+}
 
 .dashboard-infos {
   display: grid;
@@ -96,5 +102,31 @@
     padding: 5px;
     border-radius: 4px;
     color: white;
+  }
+}
+
+// Style des tabs de navigation
+
+.list-inline {
+  display: flex;
+  justify-content: space-around;
+  padding: 15px;
+  li {
+    background-color: coral;
+    padding: 5px 15px;
+    border-radius: 5px;
+    a.active {
+      border-bottom: 3px solid rgba(0, 0, 0, 0.5);
+      &:hover {
+        border-bottom: 3px solid rgba(0, 0, 0, 0.2)
+      }
+    }
+  }
+}
+
+.content {
+  display: none;
+  &.active {
+    display: block;
   }
 }
