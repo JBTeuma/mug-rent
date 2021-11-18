@@ -1,8 +1,8 @@
-<div class="banner">
+<div class="home banner">
   <div class="container">
     <h1>Mug Rent</h1> <br>
     <h1>Le réconfort d'un bon café dans le <strong><i class="fas fa-coffee"></i></strong> de ses <strong>rêves</strong> !</h1>
-    <h3>Parce que boire n'est jamais anecdotique.</h3>
+    <h3>Parce que le café est toujours meilleur dans la tasse des autres.</h3>
     <%= link_to "Voir tous les mugs", mugs_path, class: "btn btn-flat" %>
   </div>
 </div>
@@ -10,28 +10,36 @@
 <div class="container">
   <div class="home row col-12">
     <div>
-      <h2>Le café est toujours meilleur dans la tasse des autres</h2>
+      <h2>Boire n'est jamais anecdotique</h2>
       <p>
-      A tous ceux qui sont des obsessionnels de l'oubli, des imprudents notoires, des victimes des vols de tasses, des maladroits
-      compulsifs sans oubliés les potomanes, nous avons pour vous un message d'espoir :
+      A tous les obsessionnels de l'oubli, les imprudents notoires, les victimes des vols de tasses, les maladroits
+      compulsifs sans oublier les potomanes, nous avons pour vous un message d'espoir :
       <span>nous vous permettons d'avoir toujours un Mug à portée de main</span>
       </p>
     </div>
+    <div class="col-12 p-0">
+      <h2>Mug Rent vous permet de :</h2>
+    </div>
+    <div class="presentation-box col-4">
+      <h3>Louer un nouveau mug</h3>
+    </div>
+    <div class="presentation-box col-4">
+      <h3>Louer vos mugs</h3>
+    </div>
+  </div>
+  <div class="home row col-12">
     <div class="home wrapper">
       <% @mugs.each do |mug|  %>
-        <div class="home card-trip">
-          <%= cl_image_tag("#{mug.photo.key}", width: 100, height: 200) %>
-          <%= link_to mug_path(mug.id) do %>
+        <%= link_to mug_path(mug.id) do %>
+          <div class="home card-trip">
+            <%= cl_image_tag("#{mug.photo.key}", width: 100, height: 200) %>
             <div class="card-trip-infos">
-              <div>
-                <p><%= mug.description %></p>
-              </div>
-              <h2 class="card-trip-pricing text-center"><%= mug.price_by_day %>€ /jour</h2>
+              <p class="card-trip-desc"><%= mug.description %></p>
+              <h2 class="card-trip-pricing"><%= mug.price_by_day %>€/jour</h2>
             </div>
-          <% end %>
-        </div>
+          </div>
+        <% end %>
       <% end %>
-
     </div>
   </div>
 </div>
