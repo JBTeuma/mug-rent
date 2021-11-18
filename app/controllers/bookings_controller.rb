@@ -1,12 +1,6 @@
 class BookingsController < ApplicationController
   before_action :authenticate_user!, only: %i[new create]
 
-  # def new
-  #   @booking = Booking.new
-  #   @mug = Mug.find(params[:mug_id])
-  #   @booking.mug = @mug
-  # end
-
   def create
     @booking = Booking.new(booking_params)
     @mug = Mug.find(params[:mug_id])
@@ -14,7 +8,7 @@ class BookingsController < ApplicationController
     @booking.mug = @mug
     @booking.user = @user
     @booking.cost = (((@booking.end_date - @booking.start_date) / 24 / 60 / 60 ) + 1) * @mug.price_by_day
-    if @booking.save
+    if @booking.save || verify_user?(@mug)
       flash[:notice] = "La demande de location a bien été prise en compte"
       redirect_to dashboard_path
     else
@@ -28,5 +22,8 @@ class BookingsController < ApplicationController
     params.require(:booking).permit(:start_date, :end_date)
   end
 
+  def verify_user?(mug)
+    mug.user == current_user
+  end
 
 end

@@ -26,11 +26,11 @@
                 <span class="price_day"><%= @mug.price_by_day %> €</span>
               </div>
               <div class="cost_price d-flex justify-content-between p-2">
-                <span class="cost">Total</span>
-                <span class="cost_total"><%= @mug.price_by_day %> €</span>
+                <span class="cost_total">Total</span>
+                <span class="cost"><%= @mug.price_by_day %> €</span>
               </div>
             </div>
-            <%= f.submit "Réserver", class:"submit" %>
+            <%= f.submit "Réserver", class:"submit", disabled: current_user == @mug.user ? true : false %>
         </div>
         <% end %>
       </div>
