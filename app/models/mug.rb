@@ -13,5 +13,5 @@ class Mug < ApplicationRecord
   validates :price_by_day, numericality: { only_integer: true }
   validates :size, inclusion: { in: MUG_SIZES, message: "%{value} is not a valid size" }
 
-
+  delegate :longitude, :latitude, to: :user
 end

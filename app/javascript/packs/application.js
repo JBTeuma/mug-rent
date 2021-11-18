@@ -24,11 +24,13 @@ require("channels")
 
 // External imports
 import "bootstrap";
+import 'mapbox-gl/dist/mapbox-gl.css';
 
 // Internal imports, e.g:
 // import { initSelect2 } from '../components/init_select2';
-import { costCalcul } from '../components/cost_calcul'
+import { costCalcul } from '../components/cost_calcul';
 import { initFlatpickr } from "../plugins/flatpickr";
+import { initMapbox } from '../plugins/init_mapbox';
 
 
 document.addEventListener('turbolinks:load', () => {
@@ -36,4 +38,5 @@ document.addEventListener('turbolinks:load', () => {
   // initSelect2();
   costCalcul();
   initFlatpickr();
+  initMapbox();
 });

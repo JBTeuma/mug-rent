@@ -4,6 +4,13 @@ Booking.destroy_all
 Mug.destroy_all
 User.destroy_all
 
+# CREATING USER
+# FOR ADD GEOCODE (LATTITUDE AND LONGITUDE) TO USER:
+# User.all.each do |u|
+#   u.geocode
+#   u.save
+# end
+
 puts '-------Creating 2 users---------'
 
 john = User.new(username:'John', email: 'john@beetles.com', address: 'Whitechapel, London, UK')
