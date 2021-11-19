@@ -18,6 +18,12 @@ paul.save!
 george = User.new(username:'George', email: 'george@beetles.com', address: 'Muswell Hill, London, UK')
 george.password = '12345678'
 george.save!
+
+User.all.each do |u|
+  u.geocode
+  u.save!
+end
+
 puts '------ Finish to create 2 users ------'
 
 puts '-------Creating 15 mugs----------'
