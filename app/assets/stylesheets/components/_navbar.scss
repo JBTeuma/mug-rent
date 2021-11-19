@@ -24,5 +24,16 @@
 }
 
 .link-mug {
-  margin: 0.2em
+  margin: 0.2em;
+  border: 2px solid $primary;
+  color: $primary;
+  border-radius: 4px;
+}
+
+.dropdown-toggle {
+  font-family: 'Outfit', sans-serif;
+  font-size: 18px;
+  color: $primary;
+  background-color: $primary;
+  color: $white;
 }

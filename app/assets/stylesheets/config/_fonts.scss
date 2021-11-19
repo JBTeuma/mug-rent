@@ -23,8 +23,8 @@ h3 {
   font-family: $headers-font;
 }
 
-body {
-  font-size: 1.5rem;
+body, a, p {
+  font-size: 1rem;
   font-weight:lighter;
   font-family: $body-font;
 }
