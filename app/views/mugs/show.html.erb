@@ -12,9 +12,13 @@
     <div class="mug-map-info-col col-6">
       <div class="mug-info">
         <div class="mug-color"><strong><%= @mug.color.split(" ").map{ |word| word.capitalize }.join(" ") %></strong></div>
-        <div class="mug-size"><%= @mug.size %></div>
+        <div class="mug-size text-gray">
+                    <i class="fas fa-coffee h6 <%= "text-black" if @mug.size == "s"%>"></i>
+                    <i class="fas fa-coffee h5 <%= "text-black" if @mug.size == "m"%>"></i>
+                    <i class="fas fa-coffee h4 <%= "text-black" if @mug.size == "l"%>"></i>
+        </div>
       </div>
-      <div class="mug-resa-form-col col-10">
+      <div class="mug-resa-form-col col-13">
         <h2>Réserver votre mug</h2>
         <div class="form">
           <%= simple_form_for([@mug, @booking], html: { data: { priceByDay: @mug.price_by_day }}) do |f| %>

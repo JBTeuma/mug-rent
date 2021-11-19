@@ -1,3 +1,22 @@
 .mugs-title {
   margin: 48px auto;
 }
+
+#map {
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  margin-left: 3rem;
+}
+
+.main-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    .card-product-infos{
+      padding: 10px;
+    }
+  }
+}
