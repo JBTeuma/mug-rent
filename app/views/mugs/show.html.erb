@@ -2,7 +2,7 @@
   <div class="row align-items-start mug-row">
     <div class="mug-img-desc-col col-6">
       <div class="img-container w-100">
-        <%= cl_image_tag @mug.photo.key, width: 700, crop: :fill, class: "w-100" %>
+        <%= cl_image_tag @mug.photo.key, height: 350, crop: :fill, class: "w-100" %>
       </div>
       <div class="mug-desc">
         <strong><%= @mug.description %></strong>
