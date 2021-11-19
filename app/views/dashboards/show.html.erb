@@ -41,13 +41,13 @@
             <div class="dashboard card-product mug-card">
               <%= cl_image_tag("#{mug.photo.key}", width: 75, height: 75) %>
               <div class="card-product-infos">
-                <div class="mug-color"><i class="fas fa-tint">  <%= mug.color %></i></div>
+                <div class="mug-color"><i class="fas fa-tint"> <%= mug.color.split(" ").map{ |word| word.capitalize }.join(" ") %></i></div>
                 <div class="mug-size text-gray">
                     <i class="fas fa-coffee h6 <%= "text-black" if mug.size == "s"%>"></i>
                     <i class="fas fa-coffee h5 <%= "text-black" if mug.size == "m"%>"></i>
                     <i class="fas fa-coffee h4 <%= "text-black" if mug.size == "l"%>"></i>
                 </div>
-                <div class="mug-price"><%= mug.price_by_day %> <i class="fas fa-euro-sign"></i> / jour</div>
+                <div class="mug-price"><%= mug.price_by_day %> <i class="fas fa-euro-sign"></i>/jour</div>
               </div>
             </div>
           <% end %>

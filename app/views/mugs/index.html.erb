@@ -1,22 +1,31 @@
 <div class="container">
   <h1 class="mugs-title">Les mugs en location</h1>
-  <div id="map"
-     style="width: 100%; height: 600px;"
-     data-markers="<%= @markers.to_json %>"
-     data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>">
-  </div>
-  <div class="cards">
-    <% @mugs.each do |mug| %>
-      <%= link_to(mug_path(mug.id), html_options = {}) do %>
-        <div class="card-product mug-card">
-          <%= cl_image_tag("#{mug.photo.key}", width: 100, height: 100) %>
-          <div class="card-product-infos">
-            <div class="mug-color">Couleur: <strong><%= mug.color %></strong></div>
-            <div class="mug-size">Taille: <strong><%= mug.size %></strong></div>
-            <div class="mug-price">Prix: <strong><%= mug.price_by_day %> euros / jour</strong></div>
-          </div>
-        </div>
-      <% end %>
-    <% end %>
+  <div class="row justify-content-center">
+    <div class="main-container">
+      <div class="cards">
+          <% @mugs.each do |mug| %>
+            <%= link_to(mug_path(mug.id), html_options = {}) do %>
+              <div class="card-product mug-card">
+                <%= cl_image_tag("#{mug.photo.key}", width: 100, height: 100) %>
+                <div class="card-product-infos">
+                  <div class="mug-color"><strong><i class="fas fa-tint"> <%= mug.color.split(" ").map{ |word| word.capitalize }.join(" ") %></strong></i></div>
+                  <div class="mug-size text-gray">
+                          <i class="fas fa-coffee h6 <%= "text-black" if mug.size == "s"%>"></i>
+                          <i class="fas fa-coffee h5 <%= "text-black" if mug.size == "m"%>"></i>
+                          <i class="fas fa-coffee h4 <%= "text-black" if mug.size == "l"%>"></i>
+                  </div>
+                  <div class="mug-price"><strong><%= mug.price_by_day %> €/jour</strong></div>
+                </div>
+              </div>
+            <% end %>
+          <% end %>
+      </div>
+      <div id="map"
+        style="width: 100%"
+        data-markers="<%= @markers.to_json %>"
+        data-mapbox-api-key="<%= ENV['MAPBOX_API_KEY'] %>"
+        class="sticky">
+      </div>
+    </div>
   </div>
 </div>
