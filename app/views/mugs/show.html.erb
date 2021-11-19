@@ -17,9 +17,10 @@
                     <i class="fas fa-coffee h5 <%= "text-black" if @mug.size == "m"%>"></i>
                     <i class="fas fa-coffee h4 <%= "text-black" if @mug.size == "l"%>"></i>
         </div>
+        <div class="mug-address"><%= @mug.user.address %></div>
       </div>
       <div class="mug-resa-form-col col-13">
-        <h2>Réserver votre mug</h2>
+        <h4>Réserver votre mug</h4>
         <div class="form">
           <%= simple_form_for([@mug, @booking], html: { data: { priceByDay: @mug.price_by_day }}) do |f| %>
             <%= f.input :start_date, label: 'Début de la location', as: :date, html5: true, input_html: {value: f.object.start_date || Date.today, class: "datepicker" }%>

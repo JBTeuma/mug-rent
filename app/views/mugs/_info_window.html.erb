@@ -1,0 +1,4 @@
+
+<h4><%= mug.color.split(" ").map{ |word| word.capitalize }.join(" ") %></h4>
+<p><%= mug.user.address %></p>
+<%= cl_image_tag("#{mug.photo.key}", width: 100, height: 100) %>

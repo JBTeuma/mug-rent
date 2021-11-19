@@ -27,7 +27,10 @@ class MugsController < ApplicationController
     @markers = @mugs.map do |mug|
       {
         lat: mug.latitude,
-        lng: mug.longitude
+        lng: mug.longitude,
+        info_window:
+        render_to_string(partial: "info_window",
+        locals: { mug: mug })
       }
     end
   end
