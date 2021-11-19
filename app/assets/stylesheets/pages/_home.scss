@@ -72,12 +72,28 @@
 }
 
 .presentation-box {
-  border: 1px solid rgba(0, 0, 0, 0.226);
-  border-radius: 1rem;
-  margin: 8px;
+  // margin: 8px;
   padding: 16px;
   display: flex;
   justify-content: center;
   align-items: center;
   text-align: center;
+ }
+
+ .img1 {
+   width: 145px;
+   height: 100px;
+   margin: 12px;
+   background-image: image-url('coffee_personna.png');
+   background-size: cover;
+   background-position: center;
+ }
+
+ .img2 {
+   width: 145px;
+   height: 100px;
+   margin: 12px;
+   background-image: image-url('hot-coffee.png');
+   background-size: cover;
+   background-position: center;
  }
