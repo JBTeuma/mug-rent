@@ -15,11 +15,11 @@
   h1 {
     margin: 0;
     margin-top: 1rem !important;
-    color: white;
+    color: $white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
     font-weight: 700;
     strong {
-      color: #c08029;
+      color: $primary;
     }
   }
 
@@ -27,7 +27,7 @@
     font-weight: 500;
     margin-top: 1rem !important;
     margin: 0;
-    color: white;
+    color:$white;
     text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
   }
   a {
@@ -47,6 +47,9 @@
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-gap: 32px;
+  background-color: $contrast;
+  padding: 2rem;
+  border-radius: 15px;
 }
 
 .home.card-trip:hover {
